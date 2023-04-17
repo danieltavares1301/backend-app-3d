@@ -4,7 +4,9 @@
   "description": "backend do projeto 3d",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "author": "Daniel Tavares",
   "license": "ISC",
