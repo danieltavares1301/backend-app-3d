@@ -1,9 +1,9 @@
-const express = require('express');
-const dotenv = require('dotenv');
-//const ScheduleRouter = require('./router/ScheduleRouter.js');
-const cors = require('cors');
-const mongoose = require('mongoose');
-//const { default: helmet } = require('helmet');
+import express from 'express';
+import dotenv from 'dotenv';
+//import ScheduleRouter from './router/ScheduleRouter.js';
+import cors from 'cors';
+import mongoose from 'mongoose';
+//import { default: helmet } from 'helmet';
 
 dotenv.config();
 
@@ -26,4 +26,4 @@ app.use(cors());
 
 //app.use(ScheduleRouter);
 
-module.exports = app;
+export default app;
