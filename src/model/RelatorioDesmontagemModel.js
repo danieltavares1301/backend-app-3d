@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const relatorioDesmontagemSchema = new mongoose.Schema(
   {
@@ -40,4 +40,4 @@ const RelatorioDesmontagemModel = mongoose.model(
   relatorioDesmontagemSchema,
 );
 
-export default RelatorioDesmontagemModel;
+module.exports = RelatorioDesmontagemModel;

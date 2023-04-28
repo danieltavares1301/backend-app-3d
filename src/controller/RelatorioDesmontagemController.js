@@ -1,5 +1,6 @@
-import RelatorioDesmontagemModel from '../model/RelatorioDesmontagemModel.js';
-import dotenv from 'dotenv';
+const RelatorioDesmontagemModel = require('../model/RelatorioDesmontagemModel.js');
+const dotenv = require('dotenv');
+const RelatorioDesmontagem = require('../utils/HtmlRelatorioDesmontagem.js');
 
 dotenv.config();
 
@@ -9,14 +10,35 @@ class RelatorioDesmontagemController {
   async getOne(request, response) {}
 
   //retorna todos
-  async index(request, response) {}
+  async index(request, response) {
+    try {
+      // agendamentos ordenados primeiramente em data e depois em horário
+      const relatorios = await RelatorioDesmontagemModel.find();
+      response.status(200).send(relatorios);
+    } catch (error) {
+      response.status(404).json({ message: 'Request failed!' });
+    }
+  }
 
   async remove(request, response) {}
 
   //POST
-  async store(request, response) {}
+  async store(request, response) {
+    try {
+      const relatorio = await RelatorioDesmontagemModel.create(request.body);
+
+      response.status(201).json({
+        message: 'html successfully registered!',
+        relatorio,
+      });
+    } catch {
+      response
+        .status(400)
+        .json({ message: 'Error sending information in the request!' });
+    }
+  }
 
   async update(request, response) {}
 }
 
-export default RelatorioDesmontagemController;
+module.exports = RelatorioDesmontagemController;
