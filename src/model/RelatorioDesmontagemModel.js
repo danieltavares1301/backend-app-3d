@@ -30,6 +30,10 @@ const relatorioDesmontagemSchema = new mongoose.Schema(
     falhas: { type: String },
     dataInicio: { type: String },
     dataTermino: { type: String },
+    equipamentoId: {
+      type: mongoose.SchemaTypes.ObjectId,
+      ref: 'equipamento',
+    },
   },
   {
     timestamps: true, // ele cria automaticamente a data de atualização e a data de modificação

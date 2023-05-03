@@ -7,7 +7,20 @@ dotenv.config();
 // toda a lógica que busca as informações no Model e devolve uma resposta ao usuário
 class RelatorioDesmontagemController {
   //retorna 1 dado
-  async getOne(request, response) {}
+  async getOne(request, response) {
+    const id = request.params.id;
+
+    try {
+      const relatorio = await ScheduleModel.findById(id);
+
+      if (relatorio) {
+        return response.send(relatorio);
+      }
+      response.status(404).send({ message: 'relatorio not found' });
+    } catch {
+      response.status(400).send({ message: 'An unexpected error happened' });
+    }
+  }
 
   //retorna todos
   async index(request, response) {

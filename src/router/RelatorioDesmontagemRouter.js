@@ -16,7 +16,7 @@ router.get("/users", (request, response) => {
 
 router.get('/relatorio', relatorioDesmontagemController.index);
 
-//router.get('/relatorio/:id', relatorioDesmontagemController.getOne);
+router.get('/relatorio/:id', relatorioDesmontagemController.getOne);
 
 router.post('/relatorio', relatorioDesmontagemController.store);
 
