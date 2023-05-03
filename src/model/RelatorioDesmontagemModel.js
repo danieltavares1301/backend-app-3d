@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const relatorioDesmontagemSchema = new mongoose.Schema(
   {
+    name: { type: String },
     selectedCheckBox1: { type: String },
     selectedCheckBox2: { type: String },
     selectedCheckBox3: { type: String },
