@@ -35,6 +35,7 @@ const relatorioDesmontagemSchema = new mongoose.Schema(
       type: mongoose.SchemaTypes.ObjectId,
       ref: 'equipamento',
     },
+    fotos: [{ uri: { type: String } }],
   },
   {
     timestamps: true, // ele cria automaticamente a data de atualização e a data de modificação
