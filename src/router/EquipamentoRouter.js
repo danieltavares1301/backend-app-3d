@@ -20,7 +20,7 @@ router.get('/equipamento', equipamentoController.index);
 
 router.post('/equipamento', equipamentoController.store);
 
-//router.put('/relatorio/:id', equipamentoController.update);
+router.put('/equipamento/:id', equipamentoController.update);
 
 //router.delete('/relatorio/:id', equipamentoController.remove);
 

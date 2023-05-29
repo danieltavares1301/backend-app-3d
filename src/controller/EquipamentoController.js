@@ -37,7 +37,47 @@ class EquipamentoController {
     }
   }
 
-  async update(request, response) {}
+  // UPDATE
+  async update(request, response) {
+    const {
+      name,
+      url,
+      tag,
+      item,
+      localidade,
+      dataEntrada,
+      dataSaida,
+      servicosRestantes,
+      pecas,
+    } = request.body;
+    const id = request.params.id;
+
+    try {
+      const equipamento = await EquipamentoModel.findByIdAndUpdate(
+        id,
+        {
+          name,
+          url,
+          tag,
+          item,
+          localidade,
+          dataEntrada,
+          dataSaida,
+          servicosRestantes,
+          pecas,
+        },
+        { new: true },
+      );
+
+      if (!equipamento) {
+        return response.status(404).json({ message: 'Equipamento not found' });
+      }
+
+      response.json(equipamento);
+    } catch (error) {
+      response.status(400).json({ message: 'An unexpected error happened' });
+    }
+  }
 }
 
 module.exports = EquipamentoController;
