@@ -11,7 +11,7 @@ class RelatorioDesmontagemController {
     const id = request.params.id;
 
     try {
-      const relatorio = await ScheduleModel.findById(id);
+      const relatorio = await RelatorioDesmontagemModel.findById(id);
 
       if (relatorio) {
         return response.send(relatorio);
