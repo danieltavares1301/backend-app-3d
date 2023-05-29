@@ -28,7 +28,7 @@ const relatorioDesmontagemSchema = new mongoose.Schema(
     codRastreio: { type: String },
     emergencia: { type: String },
     planejado: { type: String },
-    falhas: { type: String },
+    falhas: [{ falha: { type: String } }],
     dataInicio: { type: String },
     dataTermino: { type: String },
     equipamentoId: {
