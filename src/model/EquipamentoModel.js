@@ -9,7 +9,7 @@ const equipamentoSchema = new mongoose.Schema(
     localidade: { type: String, default: 'São Luís - MA' },
     dataEntrada: { type: String },
     dataSaida: { type: String },
-    servicosRestantes: { type: String },
+    servicosRestantes: [{ servico: { type: String } }],
     pecas: [{ namePeca: { type: String }, quantidadePeca: { type: Number } }],
     userId: { type: mongoose.SchemaTypes.ObjectId, ref: 'user' },
     relatorioDesmontagemId: {
