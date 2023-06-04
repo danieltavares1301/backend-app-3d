@@ -36,6 +36,7 @@ const relatorioDesmontagemSchema = new mongoose.Schema(
       ref: 'equipamento',
     },
     fotos: [{ type: String }],
+    comentarios: [{ type: String }],
   },
   {
     timestamps: true, // ele cria automaticamente a data de atualização e a data de modificação
